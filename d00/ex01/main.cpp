@@ -1,4 +1,4 @@
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 static	void	contactInfo(void)
 {
@@ -8,19 +8,9 @@ static	void	contactInfo(void)
 
 }
 
-void	Contact		addContact(int num)
+Contact		addContact(int num)
 {
 
-
-
-
-
-
-
-}
-
-void	Contact		searchContact(int num)
-{
 
 
 
@@ -32,7 +22,7 @@ void	Contact		searchContact(int num)
 static	void	cmdOpts(void)
 {
 	std::cout << "Please enter a command" << endl;
-	std::cout << "Available commands" << endl;
+	std::cout << "Available commands:" << endl;
 	std::cout << "1. ADD" << endl;
 	std::cout << "2. SEARCH" << endl;
 	std::cout << "3. EXIT" << endl;
@@ -45,6 +35,7 @@ int		main(int ac, char *av[])
 	std::string command;
 	
 	cmdOpts();
+	i = 0;
 	while (1)
 	{
 		getline(std::cin, command, '\n');
