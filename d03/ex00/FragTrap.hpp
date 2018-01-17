@@ -16,46 +16,46 @@ public:
 	FragTrap	&	FragTrap::operator=(FragTrap const &rhs);
 
 	/* various attack functions */
-	void			rangedAttack(std::string const & target);
-	void			meleeAttack(std::string const & target);
-	void			takeDamage(unsigned int amount);
-	void			beRepaired(unsigned int amount);
+	void					rangedAttack(std::string const & target);
+	void					meleeAttack(std::string const & target);
+	void					takeDamage(unsigned int amount);
+	void					beRepaired(unsigned int amount);
 
 	/* random attack functions */
-	void			random1(std::string const & target);
-	void			random2(std::string const & target);
-	void			random3(std::string const & target);
-	void			random4(std::string const & target);
-	void			random5(std::string const & target);
-
-	void	vaulthunter_dot_exe(std::string const & target);
+	void					random1(std::string const & target);
+	void					random2(std::string const & target);
+	void					random3(std::string const & target);
+	void					random4(std::string const & target);
+	void					random5(std::string const & target);
+	void					vaulthunter_dot_exe(std::string const & target);
 
 	/* Getters */
-	std::string		getName(void);
-	int			getRangedDmg(void);
-	int			getMeleeDmg(void);
-	int			getHealAmt(void);
-	int			getDmg(void);
-	int			getRandom1Dmg(void);
-	int			getRandom2Dmg(void);
-	int			getRandom3Dmg(void);
-	int			getRandom4Dmg(void);
-	int			getRandom5Dmg(void);
+	std::string				getName(void);
+	unsigned int			getRangedDmg(void);
+	unsigned int			getMeleeDmg(void);
+	unsigned int			getHealAmt(void);
+	unsigned int			getDmg(void);
+	unsigned int			getHitPoints(void);
+	unsigned int			getRandom1Dmg(void);
+	unsigned int			getRandom2Dmg(void);
+	unsigned int			getRandom3Dmg(void);
+	unsigned int			getRandom4Dmg(void);
+	unsigned int			getRandom5Dmg(void);
 
 private:
-	std::string		_name;
-	int			_hitPoints;
-	int			_maxHitPoints;
-	int			_energyPoints;
-	int			_maxEnergyPoints;
-	int			_level;
-	int			_meleeDmg;
-	int			_rangedDmg;
-	int			_random1Dmg;
-	int			_random2Dmg;
-	int			_random3Dmg;
-	int			_random4Dmg;
-	int			_random5Dmg;
-	int			_dmgReduction;
+	std::string				_name;
+	unsigned int			_hitPoints;
+	unsigned int			_maxHitPoints;
+	unsigned int			_energyPoints;
+	unsigned int			_maxEnergyPoints;
+	unsigned int			_level;
+	unsigned int			_meleeDmg;
+	unsigned int			_rangedDmg;
+	unsigned int			_random1Dmg;
+	unsigned int			_random2Dmg;
+	unsigned int			_random3Dmg;
+	unsigned int			_random4Dmg;
+	unsigned int			_random5Dmg;
+	unsigned int			_dmgReduction;
 };
 #endif

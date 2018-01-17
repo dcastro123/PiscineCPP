@@ -32,8 +32,7 @@ FragTrap::FragTrap(std::string name)
 	this->_random3Dmg = std::rand() % 100;
 	this->_random4Dmg = std::rand() % 100;
 	this->_random5Dmg = std::rand() % 100;
-
-
+	return ;
 }
 
 FragTrap &	FragTrap::operator=(FragTrap const &rhs)
@@ -43,17 +42,156 @@ FragTrap &	FragTrap::operator=(FragTrap const &rhs)
 	this->_hitPoints = rhs._hitPoints;
 	this->_energyPoints = rhs._energyPoints;
 	this->_maxEnergyPoints = rhs._maxEnergyPoints;
-	this->_level = _level;
-	this->_meleeDmg = _meleeDmg;
-	this->_rangedDmg = _rangedDmg;
-	this->_random1Dmg = _random1Dmg;
-	this->_random2Dmg = _random2Dmg;
-	this->_random3Dmg = _random3Dmg;
-	this->_random4Dmg = _random4Dmg;
-	this->_random5Dmg = _random5Dmg;
+	this->_level = rhs._level;
+	this->_meleeDmg = rhs._meleeDmg;
+	this->_rangedDmg = rhs._rangedDmg;
+	this->_random1Dmg = rhs._random1Dmg;
+	this->_random2Dmg = rhs._random2Dmg;
+	this->_random3Dmg = rhs._random3Dmg;
+	this->_random4Dmg = rhs._random4Dmg;
+	this->_random5Dmg = rhs._random5Dmg;
+	return (*this);
 }
 
 void	rangedAttack(std::string const & target)
 {
-	
+	std::cout << this->_name << "uses ranged attack against: " << target\
+	" for " this->_rangedDmg << " damage" << endl;
+
+	return ;
+
 }
+
+void	meleeAttack(std::string const & target)
+{
+	std::cout << this->_name << "uses melee attack against: " << target\
+	" for " this->_meleeDmg << " damage" << endl;
+
+	return ;
+}
+
+void	takeDamage(unsigned int amount)
+{
+	std::cout << "I'm hit!!!" << endl;
+	if (this->_hitPoints <= amount - this->_dmgReduction)
+	{
+		this->_hitPoints = 0;
+		std::cout << "go on without me...." << endl;
+	}
+	else
+	{
+		this->_hitPoints = this->_hitPoints - (amount - this->_dmgReduction);
+		std::cout << "I'm still alive!" << endl;
+	}
+	std::cout << "Current hitpoints are: " << this->_hitPoints << std::endl;
+	return ;
+}
+
+void	beRepaired(unsigned int amount)
+{
+	std::cout << "Healing!!" << std::endl;
+	if (amount > this->_maxHitPoints)
+		this->_hitPoints = this->_maxHitPoints;
+	else
+		this->_hitPoints += amount;
+	std::cout << "Ahh much better, i healed for " << amount << endl;
+	return ;
+}
+
+void	random1Attack(std::string const & target)
+{
+	std::cout << this->_name << "uses melee attack against: " << target\
+	" for " this->_random1Dmg << " damage" << endl;
+
+	return ;
+}
+
+void	random2Attack(std::string const & target)
+{
+	std::cout << this->_name << "uses melee attack against: " << target\
+	" for " this->_random2Dmg << " damage" << endl;
+
+	return ;
+}
+
+void	random3Attack(std::string const & target)
+{
+	std::cout << this->_name << "uses melee attack against: " << target\
+	" for " this->_random3Dmg << " damage" << endl;
+
+	return ;
+}
+
+void	random4Attack(std::string const & target)
+{
+	std::cout << this->_name << "uses melee attack against: " << target\
+	" for " this->_random4Dmg << " damage" << endl;
+
+	return ;
+}
+
+void	random5Attack(std::string const & target)
+{
+	std::cout << this->_name << "uses melee attack against: " << target\
+	" for " this->_random5Dmg << " damage" << endl;
+
+	return ;
+}
+
+void	valthunter_dot_exe(std::string const & target)
+{
+	int	rand = std::rand() % 5;
+	if (this->_energyPoints < 25)
+		std::cout << "not enough energy!!" << endl;
+	else
+	{
+		std::cout << "Time to play attack roulette!" << endl;
+		srand(time(NULL));
+		this->_energyPoints -= 25;
+		if (rand == 0)
+			FragTrap::random1Attack(target);
+		else if (rand == 1)
+			FragTrap::random2Attack(target);
+		else if (rand == 3)
+			FragTrap::random3Attack(target);
+		else if (rand == 4)
+			FragTrap::random4Attack(target);
+		else if (rand == 5)
+			FragTrap::random5Attack(target);
+	}
+	return ;
+}
+
+std::string		getName(void)
+{
+	return (this->_name);
+}
+
+unsigned int	getRangedDmg(void)
+{
+	return (this->_rangedDmg);
+}
+
+unsigned int	getMeleeDmg(void)
+{
+	return (this->_rangedDmg);
+}
+
+unsigned int	getHealAmt(void)
+{
+	return (this->_)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
