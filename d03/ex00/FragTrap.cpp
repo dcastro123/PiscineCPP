@@ -141,7 +141,7 @@ void	random5Attack(std::string const & target)
 void	valthunter_dot_exe(std::string const & target)
 {
 	int	rand = std::rand() % 5;
-	if (this->_energyPoints < 25)
+	if (this->_energyPoints <= 24)
 		std::cout << "not enough energy!!" << endl;
 	else
 	{
@@ -177,9 +177,31 @@ unsigned int	getMeleeDmg(void)
 	return (this->_rangedDmg);
 }
 
-unsigned int	getHealAmt(void)
+unsigned int	getHitPoints(void)
 {
-	return (this->_)
+	return (this->_hitPoints);
+}
+
+unsigned int	getRandom1Dmg(void)
+{
+	return (this->_random1Dmg);
+}
+
+unsigned int	getRandom2Dmg(void)
+{
+	return (this->_random2Dmg);
+}
+unsigned int	getRandom3Dmg(void)
+{
+	return (this->_random3Dmg);
+}
+unsigned int	getRandom4Dmg(void)
+{
+	return (this->_random4Dmg);
+}
+unsigned int	getRandom5Dmg(void)
+{
+	return (this->_random5Dmg);
 }
 
 

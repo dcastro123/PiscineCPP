@@ -33,8 +33,6 @@ public:
 	std::string				getName(void);
 	unsigned int			getRangedDmg(void);
 	unsigned int			getMeleeDmg(void);
-	unsigned int			getHealAmt(void);
-	unsigned int			getDmg(void);
 	unsigned int			getHitPoints(void);
 	unsigned int			getRandom1Dmg(void);
 	unsigned int			getRandom2Dmg(void);
